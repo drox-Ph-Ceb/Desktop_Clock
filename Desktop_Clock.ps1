@@ -264,7 +264,8 @@ function Show-AlarmManager {
 
     $btnSave = New-Object System.Windows.Forms.Button
     $btnSave.Text = "Save Changes"
-    $btnSave.Location = New-Object System.Drawing.Point(80,220)
+    $btnSave.AutoSize = $true
+	$btnSave.Location = New-Object System.Drawing.Point(80,220)
     $btnSave.Add_Click({
         for ($i=0; $i -lt $lv.Items.Count; $i++) {
             $global:alarms[$i].Active = $lv.Items[$i].Checked
@@ -276,6 +277,7 @@ function Show-AlarmManager {
 
     $btnDelete = New-Object System.Windows.Forms.Button
     $btnDelete.Text = "Delete Selected"
+	$btnDelete.AutoSize = $true
     $btnDelete.Location = New-Object System.Drawing.Point(220,220)
     $btnDelete.Add_Click({
         if ($lv.SelectedItems.Count -gt 0) {
